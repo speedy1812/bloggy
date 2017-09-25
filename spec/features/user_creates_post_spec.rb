@@ -7,6 +7,7 @@ feature "User creates new blog post", type: :feature do
     
     click_on "Save Article"
 
+    expect(page).to have_css "p", text: 'Apple'
     expect(page).to have_css "p", text: 'Apples are awesome!'
   end
 end
