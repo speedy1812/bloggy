@@ -13,7 +13,7 @@ feature "User edits blog post", type: :feature do
 
     fill_in "Text", with: "Apples are amazing!"
 
-    click_on "Update Article"
+    click_on "Save Article"
     
     expect(page).to have_content("Apples are amazing!")
   end
