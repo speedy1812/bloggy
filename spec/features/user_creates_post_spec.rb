@@ -11,7 +11,7 @@ feature "User creates new blog post", type: :feature do
     expect(page).to have_css "p", text: 'Apples are awesome!'
   end
 
-  scenario "unsuccessfully" do
+  scenario "with invalid title" do
     visit "articles/new" 
     
     fill_in "Title", with: "Ap"
@@ -19,7 +19,17 @@ feature "User creates new blog post", type: :feature do
     
     click_on "Save Article"
 
-    expect(page).to have_css "h1", text: 'New Article'
+    expect(page).to have_css "li", text: 'Title is too short'
+  end
+
+  scenario "with no text" do
+    visit "articles/new" 
     
+    fill_in "Title", with: "Apple"
+    fill_in "Text", with: ""
+    
+    click_on "Save Article"
+
+    expect(page).to have_css "li", text: 'Text can\'t be blank'
   end
 end
