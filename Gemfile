@@ -19,6 +19,7 @@ gem 'jbuilder', '~> 2.5'
 group :test do
   gem "capybara", "~> 2.13.0"
   gem "launchy", "~> 2.4", ">= 2.4.3"
+  gem "shoulda-matchers", "~> 3.1", ">= 3.1.1"
 end
 
 group :development, :test do
