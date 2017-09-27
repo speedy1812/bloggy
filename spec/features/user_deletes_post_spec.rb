@@ -8,7 +8,6 @@ feature "User deletes blog post", type: :feature do
     click_on "Create Article"
     click_on "Back"
     click_on "Destroy"
-    click_on "OK"
 
     expect(page).not_to have_content("Figs are fabulous!")
   end
