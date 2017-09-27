@@ -5,7 +5,7 @@ feature "User creates new blog post", type: :feature do
     fill_in "Title", with: "Apple"
     fill_in "Text", with: "Apples are awesome!"
     
-    click_on "Save Article"
+    click_on "Create Article"
 
     expect(page).to have_css "p", text: 'Apple'
     expect(page).to have_css "p", text: 'Apples are awesome!'
@@ -17,7 +17,7 @@ feature "User creates new blog post", type: :feature do
     fill_in "Title", with: "Ap"
     fill_in "Text", with: "Apples are awesome!"
     
-    click_on "Save Article"
+    click_on "Create Article"
 
     expect(page).to have_css "li", text: 'Title is too short'
   end
@@ -28,7 +28,7 @@ feature "User creates new blog post", type: :feature do
     fill_in "Title", with: "Apple"
     fill_in "Text", with: ""
     
-    click_on "Save Article"
+    click_on "Create Article"
 
     expect(page).to have_css "li", text: 'Text can\'t be blank'
   end
