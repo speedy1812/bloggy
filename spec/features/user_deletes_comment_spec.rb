@@ -15,7 +15,7 @@ feature "User deletes comment", type: :feature do
     expect(page).to have_content("Fred")
     expect(page).to have_content("Flintstones are better.")
 
-    click_on "Destroy"
+    click_on "Destroy Comment"
 
     expect(page).not_to have_content("Fred")
     expect(page).not_to have_content("Flintstones are better.")
